@@ -24,7 +24,7 @@
  - Laravel8.83.29  
  - MySQL8.0.26  
 ## ER図  
-![alt text](erd.png)  
+![ER図](./src/database/erd.png)
 
 ## URL
 - 開発環境：http://localhost/  
