@@ -17,5 +17,17 @@
 5. マイグレーションの実行  
     php artisan migrate  
 6. シーディングの実行  
-    php artisan db:seed
+    php artisan db:seed  
+
+## 使用技術（実行環境）  
+ - PHP7.4.9  
+ - Laravel8.83.29  
+ - MySQL8.0.26  
+## ER図  
+![alt text](erd.png)  
+
+## URL
+- 開発環境：http://localhost/  
+
+- phpMyAdmin:http://localhost:8080/
 
