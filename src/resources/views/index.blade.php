@@ -9,7 +9,13 @@
 <div class="content">
     <div class="heading">
         <!-- <div class="title"> -->
-          <h2>商品一覧</h2>  
+        <h2>
+            @if(isset($keyword) && $keyword !== '')
+             "{{$keyword}}"の商品一覧
+             @else
+              商品一覧
+             @endif 
+        </h2> 
         <!-- </div> -->
         <!-- <div class="link"> -->
             <a href="" class="add__link">
@@ -18,9 +24,10 @@
         <!-- </div> -->
     </div>
    <div class="product__content">
-    <form action="" class="search-form" method="">
+    <form action="/products/search" class="search-form" method="get">
+        @csrf
         <div class="search-form__input">
-            <input type="text" class="search-form__input-text" placeholder="商品名で検索">
+            <input type="text" name="keyword"class="search-form__input-text" placeholder="商品名で検索" value="{{old('keyword')}}">
         </div>
         <div class="search-form__button">
             <button class="search-form__button-submit" type="submit">
@@ -33,9 +40,9 @@
             </div>
             <div class="products-show__select-inner">
                 <select name="" id="" class="products-show__select">
-                    <option disabled selected>
+                <option disabled selected>
                          価格で並び替え
-                    </option>
+                </option>
                 </select>
             </div>
         </div>
@@ -57,8 +64,10 @@
    
     
   </div>
+  @if(!isset($keyword)|| empty($keyword))
     <div class="pagination">
-       {{ $products->links() }}
+       {{ $products->links()}}
     </div>
+  @endif
 </div>
 @endsection
