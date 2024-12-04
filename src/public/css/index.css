@@ -1,5 +1,6 @@
 .content {
    background-color: #f8f8f8;
+   
 }
 
 
@@ -7,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    padding: 60px 20px;
 }
 h2 {
     font-size: 32px;
@@ -18,7 +19,7 @@ h2 {
     padding: 13px 20px;
     display: inline-block;
     
-    margin-right: 20px;
+   
     text-decoration: none;
     background: #ffa929;
     font-weight: bold;
@@ -26,13 +27,14 @@ h2 {
 .product__content {
     
     display: flex;
-    justify-content: space-between;
+    margin: 20px ;
+   
 }
 
 
 .search-form__input-text {
     border-radius: 25px;
-    width: 240px;
+    width: 260px;
     height: 40px;
     border: 1px solid #e0dfde;
     padding: 5px 20px;
@@ -50,41 +52,97 @@ h2 {
     font-weight: bold;
     margin-bottom: 60px;
 }
-.show__label {
+.products-show__label {
     font-size: 20px;
     font-weight: 600;
 
 }
-.show__select {
+.products-show__select {
     width: 260px;
     height: 40px;
     border-radius: 5px;
     color: #e0dfde;
     border: 1px solid #e0dfde;
+  
 
 }
-.card__box {
+.products-card__group {
 
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    flex-direction: row;
+   
     justify-content: flex-start;
-    position: relative;
-    left: 50px;
+    max-width: 1260px;
+  
+    margin-left: 140px;
+    
 
 }
 
-.card {
+.products-card {
     border: 1px solid #e0dfde;
    
     width: 400px;
-    padding: 10px;
+    /*padding: 10px;*/
     border-radius: 5px;
-    height: 400px;
+    height: 380px;
+}
+.products-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.products-card__item {
+    text-decoration: none;
+}
+.products-card__content {
+    background: #fff;
+    height: 70px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.products-card__name ,
+.products-card__price{
+    font-size: 24px;
+    font-weight: 400;
+    font-style: inter;
+    color: #4b4b4b;
 }
 
 
-p {
-    text-align: center;
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    margin-left: 350px;
+}
+
+.pagination a,
+.pagination span {
+    margin: 0 5px;
+    padding: 5px 10px;
+   
+    border-radius: 3px;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination a:hover {
+    background-color: #f0f0f0;
+}
+
+.pagination .active {
+    background-color:#f5c800;
+    color: #fff;
+   
+}
+
+svg.w-5.h-5 {
+  
+    width: 30px;
+    height: 30px;
+    color: #f5c800;
 }

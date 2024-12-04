@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<!--クラス名をあとで考える  -->
+
 <div class="content">
     <div class="heading">
         <!-- <div class="title"> -->
@@ -17,8 +17,8 @@
             </a>
         <!-- </div> -->
     </div>
-    <div class="product__content">
-    <form action="" class="search-form">
+   <div class="product__content">
+    <form action="" class="search-form" method="">
         <div class="search-form__input">
             <input type="text" class="search-form__input-text" placeholder="商品名で検索">
         </div>
@@ -27,12 +27,12 @@
                 検索
             </button>
         </div>
-        <div class="show">
-            <div class="show__label">
+        <div class="products-show">
+            <div class="products-show__label">
                  価格順で表示
             </div>
-            <div class="show__select-inner">
-                <select name="" id="" class="show__select">
+            <div class="products-show__select-inner">
+                <select name="" id="" class="products-show__select">
                     <option disabled selected>
                          価格で並び替え
                     </option>
@@ -40,21 +40,25 @@
             </div>
         </div>
     </form>
-    <div class="card__box">
-        <div class="card">card1</div>
-        <div class="card">card2</div>
-        <div class="card">card3</div>
-        <div class="card">card4</div>
-        <div class="card">card5</div>
-        <div class="card">card6</div>
-        <div class="card">card7</div>
-        <div class="card">card8</div>
-        <div class="card">card9</div>
-        <div class="card">card10</div>
+    
+    <div class="products-card__group">
+        @foreach($products as $product)
+        <div class="products-card">
+            <a href="" class="products-card__item">
+                <img src="{{ asset('storage/images/' . $product->image)}}" alt="" class="products-image">
+                <div class="products-card__content">
+                    <label class="products-card__name">{{$product->name}}</label>
+                    <label class="products-card__price">￥{{$product->price}}</label>
+                </div>
+            </a>
+        </div>
+         @endforeach
     </div>
+   
+    
+  </div>
+    <div class="pagination">
+       {{ $products->links() }}
     </div>
-    <p class="pagenation">
-        ページネーション
-    </p>
 </div>
 @endsection
