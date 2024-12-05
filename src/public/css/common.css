@@ -13,3 +13,14 @@
     font-style: italic;
     color: #F5C800;
 }
+input ,textarea{
+    background: #fff;
+}
+textarea {
+    width: 800px;
+    height: 160px;
+}
+.error {
+    color: #ff0000;
+    text-align: left;
+}

@@ -1,0 +1,144 @@
+.content {
+    background-color: #f8f8f8;
+    height: 100vh;
+    width: 100vw;
+    margin: 0 auto;
+}
+
+
+ol.breadcrumb {
+    
+    padding-top: 30px;
+    list-style: none;
+    display: flex;
+    margin-left:450px;
+   
+}
+ol.breadcrumb li:after {
+    content:">";
+    margin: 0 10px;
+
+}
+ol.breadcrumb li:last-child::after {
+    content: none;
+}
+
+.products-list {
+    text-decoration: none;
+    color: #0085FF;
+}
+.products-name {
+    text-decoration: none;
+    color: #4b4b4b;
+    font-weight: 300;
+    font-size: 14px;
+}
+.detail-form {
+    width: 800px;
+    margin: 0 auto;
+    text-align: left;
+   
+}
+.products-card__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  
+}
+.products-card {
+    border: 1px solid #e0dfde;
+
+    width: 400px;
+    
+    border-radius: 5px;
+    height: 380px;
+    
+}
+
+.products-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+label {
+    font-size: 16px;
+    font-weight: 300;
+    color: #4b4b4b;
+}
+.products-card__name,
+.products-card__price {
+    margin-bottom: 30px;
+}
+.products-card__name-input, 
+.products-card__price-input {
+    width: 390px;
+    height: 40px;
+}
+.season__checkbox {
+    display: flex;
+    justify-content: left;
+}
+.season__checkbox-option {
+    margin-right: 20px;
+}
+.season__input {
+    position: absolute;
+    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.season__text {
+    display: flex;
+    align-items: center;
+}
+.season__text::before {
+    display: block;
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid ;
+    border-radius: 50%;
+    content: '';
+}
+.season__input:checked+.season__text::before {
+    background: #F000;
+}
+.products-detail {
+    text-align: left;
+    margin-bottom: 30px;
+}
+.button__item {
+    display: flex;
+    justify-content: space-between;
+}
+.back__link {
+    
+    margin-left: 200px;
+    width: 200px;
+    height: 50px;
+    text-decoration: none;
+    background: #E0DFDE;
+    font-size: 16px;
+    font-weight: 600;
+    text-align:center;
+    padding:10px ;
+    color: #4b4b4b;
+}
+.store-button {
+    margin-right: 120px;
+   
+    width: 200px;
+    height: 50px;
+    background: #f5c800;
+    color: #4b4b4b;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+   
+   
+
+.delete__button img {
+    color: #ff0000;
+}

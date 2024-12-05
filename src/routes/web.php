@@ -17,5 +17,7 @@ use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/products',[ProductController::class,'index']);
+// view表示させるために一時的に変更
+// Route::get('/products',[ProductController::class,'index']);
+Route::get('/products/detail',[ProductController::class,'index']);
 Route::get('/products/search',[ProductController::class,'search']);

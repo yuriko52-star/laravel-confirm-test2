@@ -7,14 +7,17 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    public function index()
-    {
-        $products = Product::select('id','name','price','image')->get();
+    // public function index()
+    // {
+        // $products = Product::select('id','name','price','image')->get();
         
-        $products = Product::paginate(6);
-        return view('index',compact('products'));
+        // $products = Product::paginate(6);
+        // return view('index',compact('products'));
+    //  }
+     public function index()
+     {
+        return view('detail');
      }
-     
     public function search(Request $request)
     {
         $keyword = $request->input('keyword');
