@@ -51,7 +51,7 @@
     <div class="products-card__group">
         @foreach($products as $product)
         <div class="products-card">
-            <a href="" class="products-card__item">
+            <a href="{{ route('products.show', ['productId' => $product->id]) }}" class="products-card__item">
                 <img src="{{ asset('storage/images/' . $product->image)}}" alt="" class="products-image">
                 <div class="products-card__content">
                     <label class="products-card__name">{{$product->name}}</label>
