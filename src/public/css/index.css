@@ -1,7 +1,11 @@
-.content {
-    background-color: #f8f8f8;
+.content {  
+    
+   width: 90%;
+    margin: 0 auto;
+    
 
 }
+
 
 
 .heading {
@@ -27,6 +31,7 @@ h2 {
 .product__content {
     
     display: flex;
+    width: 100%;
     margin: 20px ;
    
 }
@@ -73,9 +78,9 @@ h2 {
     gap: 20px;
    
     justify-content: flex-start;
-    max-width: 1260px;
+    /*width: 1200px;*/
   
-    margin-left: 140px;
+    margin-left: 300px;
     
 
 }

@@ -2,14 +2,16 @@
     box-sizing: border-box;
 }
     */
-.content {
+/*.content {
     background-color: #f8f8f8;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     margin: 0 auto;
 }
-
-
+*/
+main {
+    background-color: #f8f8f8;
+}
 ol.breadcrumb {
     
     padding-top: 30px;
@@ -136,6 +138,7 @@ label {
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    padding-bottom: 60px;
 }
 .back__link {
     
@@ -149,10 +152,11 @@ label {
     text-align:center;
     padding:10px ;
     color: #4b4b4b;
+    border-radius: 5px;
 }
 .store-button {
     margin-right: 180px;
-   
+    border-radius: 5px;
     width: 200px;
     height: 50px;
     background: #f5c800;

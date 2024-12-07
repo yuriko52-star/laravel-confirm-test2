@@ -75,10 +75,10 @@
     <form action="{{ route('products.delete',$product->id)}}" class="delete-form" method="post">
         @method('DELETE')
         @csrf
-        <button type="submit" class="delete__button"> <img src="/storage/images/trash_icon_128726.png" height ="32" width="32"style="filter: invert(27%) sepia(94%) saturate(5482%) hue-rotate(0deg) brightness(95%) contrast(104%);
-" /></button>
-        </form>
-        </div>
+        <button type="submit" class="delete__button"> <img src="/storage/images/trash_icon_128726.png" height ="32" width="32"style="filter: invert(27%) sepia(94%) saturate(5482%) hue-rotate(0deg) brightness(95%) contrast(104%);" />
+        </button>
+    </form>
+</div>
 
         
         
@@ -86,5 +86,5 @@
         
     
     
-</div>
+<!-- </div> -->
 @endsection

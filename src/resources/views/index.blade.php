@@ -18,7 +18,7 @@
         </h2> 
         <!-- </div> -->
         <!-- <div class="link"> -->
-            <a href="" class="add__link">
+            <a href="/products/register" class="add__link">
                 ＋商品を追加
             </a>
         <!-- </div> -->

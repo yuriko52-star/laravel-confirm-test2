@@ -13,14 +13,22 @@
     font-style: italic;
     color: #F5C800;
 }
+main {
+    background-color: #f8f8f8;
+}
+
 input ,textarea{
     background: #fff;
 }
 textarea {
     width: 800px;
     height: 160px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 .error {
-    color: #ff0000;
+    color: #fd0707;
     text-align: left;
+    /*height: 20px;*/
+    
 }

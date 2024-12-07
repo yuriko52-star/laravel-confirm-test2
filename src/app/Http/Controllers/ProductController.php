@@ -9,14 +9,62 @@ use App\Models\Season;
 
 
 class ProductController extends Controller
-{
-     public function index()
+ {
+
+    
+    
+      public function index()
      {
         $products = Product::select('id','name','price','image')->get();
         
         $products = Product::paginate(6);
         return view('index',compact('products'));
      }
+    
+
+
+
+
+
+     public function create()
+     {
+        $allSeasons = Season::all(); // 季節データを取得
+        $product = new Product();
+        return view('register', compact('product','allSeasons')); // Bladeにデータを渡す
+    }
+        
+     
+
+
+    public function store(Request $request)
+    {
+    $product = new Product();
+
+    $product->name = $request->input('name');
+    $product->price = $request->input('price');
+    $product->description = $request->input('description');
+
+    if ($request->hasFile('image') && $request->file('image')->isValid()) {
+        $filename = uniqid() . '_' . $request->file('image')->getClientOriginalName();
+        $request->file('image')->storeAs('images', $filename, 'public');
+        $product->image = $filename;
+    } 
+    // else {
+        // アップロードされない場合は既存の画像をそのまま使う
+        // $product->image = $request->input('current_image'); // hiddenフィールドから既存画像を取得
+    
+
+    $product->save();
+
+    // 中間テーブル（seasons）の更新
+     
+    if ($request->has('seasons')) {
+        $product->seasons()->sync($request->input('seasons', []));
+    }
+
+    return redirect()->route('products.index'); // 一覧画面にリダイレクト
+}
+
     
     public function search(Request $request)
     {
@@ -60,7 +108,7 @@ class ProductController extends Controller
     }
         $product->save();
 
-        return redirect()->route('products.show', $product->id);
+        return redirect()->route('products.index', $product->id);
     }
         public function destroy($productId) 
         {
@@ -70,4 +118,5 @@ class ProductController extends Controller
             return redirect()->route('products.index');
             
         }
+       
 }

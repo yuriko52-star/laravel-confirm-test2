@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
+use Illuminate\Support\Facades\Log;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,8 +22,19 @@ Route::get('/', function () {
 });
 
 Route::get('/products',[ProductController::class,'index'])->name('products.index');
+Route::get('/products/register',[ProductController::class,'create'])->name('products.create');
+Route::post('/products/register',[ProductController::class,'store'])->name('products.store');
 
 Route::get('/products/search',[ProductController::class,'search']);
 Route::get('/products/{productId}',[ProductController::class,'show'])->name('products.show');
 Route::put('/products/{productId}/update',[ProductController::class,'update'])->name('products.update');
 Route::delete('/products/{productId}/delete',[ProductController::class,'destroy'])->name('products.delete');
+
+
+// Route::get('/products/register', function () {
+    // Log::info('Accessed /products/register');
+    // return view('register');
+// })->name('products.create');
+// Route::get('/test-register', function () {
+    // return view('register');
+// });
