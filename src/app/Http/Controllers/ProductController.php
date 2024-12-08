@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Season;
+use App\Http\Requests\ProductRequest;
 
 
 
@@ -33,11 +34,19 @@ class ProductController extends Controller
         return view('register', compact('product','allSeasons')); // Bladeにデータを渡す
     }
         
-     
+    /* public function store(Request $request)
+     {
+        \Log::info('Request data:', $request->all());
+    return response()->json(['message' => 'Data logged'], 200);
+     }
+*/
 
-
-    public function store(Request $request)
+      public function store(ProductRequest $request)
     {
+        // $validated = $request->validated();
+
+        // \Log::info('Validated Request Data:', $validated);
+
     $product = new Product();
 
     $product->name = $request->input('name');
@@ -58,14 +67,14 @@ class ProductController extends Controller
 
     // 中間テーブル（seasons）の更新
      
-    if ($request->has('seasons')) {
-        $product->seasons()->sync($request->input('seasons', []));
+    if ($request->has('season_id')) {
+        $product->seasons()->sync($request->input('season_id', []));
     }
 
     return redirect()->route('products.index'); // 一覧画面にリダイレクト
 }
 
-    
+   
     public function search(Request $request)
     {
         $keyword = $request->input('keyword');
@@ -84,14 +93,19 @@ class ProductController extends Controller
     return view('detail', compact('product','allSeasons'));
 }
 
-    public function update(Request $request, $productId)
+    public function update(ProductRequest $request, $productId)
     {
+        
         $product = Product::findOrFail($productId);
 
          $product->name = $request->input('name');
         $product->price = $request->input('price');
         $product->description = $request->input('description');
-        $product->seasons()->sync($request->input('seasons', []));
+
+        if($request->has('season_id')) {
+            $product->seasons()->sync($request->input('season_id', []));
+        }
+        
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
         

@@ -21,8 +21,11 @@
           
             <img src="{{asset('storage/images/' . $product->image)}}" alt="/" class="products-image">
             <input type="file" name="image">
-          
-            <p class="error">画像を選択してね！</p>
+           @error('image') 
+            <p class="error">
+              {{$message}}
+            </p>
+            @enderror
         </div>
         
         <div class="products-card__group">
@@ -31,33 +34,47 @@
                 <div class="">
                 <input type="text" class="products-card__name-input"name="name" placeholder="商品名を入力" value="{{ old('name', $product->name )}}"style="color:gray;">
                 </div>
-                <p class="error">名前を入れてね！</p>
+                <p class="error">
+                @error('name')
+                {{ $message }}
+                @enderror
+                </p>
             </div>
             <div class="products-card__price">
                 <label for="">値段</label>
                 <div class="">
                 <input type="text" class="products-card__price-input" name="price"placeholder="値段を入力" value="{{ old('price', $product->price) }}"style="color:gray;">
                 </div>
-                <p class="error">値段を入れてね！</p>
+                <p class="error">
+                    @error('price')
+                    {{ $message }}
+                    @enderror
+
+                </p>
             </div>
             <div class="products-card__season">
                 <label for="">季節</label>
 
                 <!-- <div class="season__checkbox"> -->
                     <!-- <div class="season__checkbox-option"> -->
-                
-
-                        <label class="seasons__label">
-                            @foreach($allSeasons as $season)
-                            <input type="checkbox" name="seasons[]"class="season__input"value="{{ $season->id}}"{{ old('seasons', $product->seasons)->contains('id',$season->id) ? 'checked' : ''}}>
+                <label class="seasons__label">
+                    @foreach($allSeasons ??[] as $season)
+                        
+                            
+                            <input type="checkbox" name="season_id[]"class="season__input"value="{{$season->id}}"{{ in_array($season->id, old('season_id',$product->seasons->pluck('id')->toArray() ?? [] )) ? 'checked' : ''}}"> 
                             <span class="season__text">{{$season->name}}</span>
-                            @endforeach
+                     @endforeach       
                         </label>
+                   
 
                     <!-- </div> -->
                 <!-- </div> -->
                 
-            <p class="error">季節を入れてね！</p>
+            <p class="error">
+                @error('season_id')
+                {{$message}}
+                @enderror
+            </p>
             </div>
         </div>
     </div>
@@ -66,7 +83,11 @@
             <label class="products-detail__label">商品説明</label>
             </div>
             <textarea name="description" id=""style="color:gray;"placeholder="商品の説明を入力">{{ old('description', $product->description )}}</textarea>
-            <p class="error">説明文入れてね！</p>
+            <p class="error">
+                @error('description')
+                {{ $message}}
+                @enderror
+            </p>
         </div>
         <div class="button__item">
        <a href="/products" class="back__link">戻る</a>

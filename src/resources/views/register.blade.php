@@ -20,7 +20,9 @@
 
             <input type="text" class="register__input-text" name="name"  placeholder="商品を入力"style="color:gray;" value="{{old('name')}}">
             <div class="error">
-                商品名を入れてね！
+                @error('name')
+                {{$message}}
+                @enderror
             </div>
 
         </div>
@@ -32,7 +34,9 @@
 
             <input type="text" class="register__input-text" name="price"  placeholder="値段を入力" style="color:gray;"value="{{old('price')}}">
             <div class="error">
-                値段を入れてね！
+                @error('price')
+                {{$message}}
+                @enderror
             </div>
         </div>
 
@@ -43,13 +47,13 @@
             </div>
             <div class="products-card">
           
-            <img src="{{ old('image',$product->image ? asset('storage/images/' . $product->image) : '') }}" alt="/" class="products-image">
+            <img src="{{ isset($product) && $product->image ? asset('storage/images/' . $product->image) : '' }}" alt="/" class="products-image">
             <input type="file" name="image">
            
-            
-            <div class="error">
-                画像を入れてね！
-            </div>
+            @error('image')
+            <div class="error">{{$message}} </div>
+            @enderror
+           
         </div>    
 
         <div class="register__group">
@@ -62,7 +66,7 @@
              @foreach($allSeasons ?? [] as $season)
             <label class="seasons__label">
                            
-            <input type="checkbox" name="seasons[]"class="season__input" value="{{$season->id}}"{{ old('seasons', $product->seasons ??  collect())->contains('id', $season->id) ? 'checked' : ''}}>
+            <input type="checkbox" name="season_id[]"class="season__input" value="{{$season->id}}"{{ in_array($season->id, old('season_id', $product->seasons->pluck('id')->toArray() ?? [])) ? 'checked' : ''}}>
             <span class="season__text">{{$season->name}}</span>
                        
             </label>
@@ -70,7 +74,9 @@
             
             
             <div class="error">
-                季節を入れてね！
+                @error('season_id')
+                {{$message}}
+                @enderror
             </div>
         </div>
         <div class="register__group">
@@ -81,7 +87,9 @@
             <textarea name="description" id=""style="color:gray;"placeholder="商品の説明を入力">{{old('description')}}</textarea>
 
             <div class="error">
-                商品説明を入れてね！
+                @error('description')
+                {{$message}}
+                @enderror
             </div>
         
         </div>
