@@ -9,21 +9,18 @@
     margin: 0 auto;
 }
 */
-main {
+/*main {
     background-color: #f8f8f8;
-}
+}*/
 ol.breadcrumb {
-    
     padding-top: 30px;
     list-style: none;
     display: flex;
     margin-left:600px;
-   
 }
 ol.breadcrumb li:after {
     content:">";
     margin: 0 10px;
-
 }
 ol.breadcrumb li:last-child::after {
     content: none;
@@ -43,7 +40,6 @@ ol.breadcrumb li:last-child::after {
     width: 850px;
     margin: 0 auto;
     text-align: left;
-   
 }
 .products-card__item {
     display: flex;
@@ -54,13 +50,10 @@ ol.breadcrumb li:last-child::after {
   
 }
 .products-card {
-    border: 1px solid #e0dfde;
-
+    /*border: 1px solid #e0dfde;*/
     width: 400px;
-    
     border-radius: 5px;
     height: 380px;
-    
 }
 
 .products-image {
@@ -83,7 +76,6 @@ label {
     height: 40px;
 }
 .seasons__label {
-    
     display: flex;
     justify-content: left;
    gap: 10px;

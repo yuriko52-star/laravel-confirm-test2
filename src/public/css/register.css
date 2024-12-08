@@ -1,8 +1,5 @@
 .content {
-    /*background-color: #f8f8f8;
-    height: 100vh;
-    width: 100vw;
-    */
+   
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -16,8 +13,6 @@
     font-family: Hiragino Kaku Gothic Pro;
     font-size: 32px;
     font-weight: 600;
-        
-       
 }
 .register-form {
     grid-column: 2/3;
@@ -67,10 +62,7 @@
    
 }
 .products-card {
-    border: 1px solid #e0dfde;
-
     width: 400px;
-
     border-radius: 5px;
     height: 380px;
 

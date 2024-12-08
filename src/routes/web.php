@@ -30,11 +30,3 @@ Route::get('/products/{productId}',[ProductController::class,'show'])->name('pro
 Route::put('/products/{productId}/update',[ProductController::class,'update'])->name('products.update');
 Route::delete('/products/{productId}/delete',[ProductController::class,'destroy'])->name('products.delete');
 
-
-// Route::get('/products/register', function () {
-    // Log::info('Accessed /products/register');
-    // return view('register');
-// })->name('products.create');
-// Route::get('/test-register', function () {
-    // return view('register');
-// });

@@ -1,7 +1,6 @@
 .header {
     height:50px ;
     border-bottom: 1px solid #F4F4F4;
-    
 }
 .header__inner {
     max-width: 1230px;
@@ -29,6 +28,4 @@ textarea {
 .error {
     color: #fd0707;
     text-align: left;
-    /*height: 20px;*/
-    
 }

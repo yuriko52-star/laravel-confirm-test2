@@ -1,13 +1,7 @@
 .content {  
-    
-   width: 90%;
+    width: 90%;
     margin: 0 auto;
-    
-
 }
-
-
-
 .heading {
     display: flex;
     justify-content: space-between;
@@ -22,8 +16,6 @@ h2 {
 .add__link {
     padding: 13px 20px;
     display: inline-block;
-    
-   
     text-decoration: none;
     background: #ffa929;
     font-weight: bold;
@@ -60,7 +52,6 @@ h2 {
 .products-show__label {
     font-size: 20px;
     font-weight: 600;
-
 }
 .products-show__select {
     width: 260px;
@@ -68,28 +59,18 @@ h2 {
     border-radius: 5px;
     color: #e0dfde;
     border: 1px solid #e0dfde;
-  
-
 }
 .products-card__group {
-
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-   
     justify-content: flex-start;
-    /*width: 1200px;*/
-  
     margin-left: 300px;
-    
-
 }
 
 .products-card {
     border: 1px solid #e0dfde;
-   
     width: 400px;
-    /*padding: 10px;*/
     border-radius: 5px;
     height: 380px;
 }
@@ -125,26 +106,25 @@ h2 {
     margin-left: 350px;
 }
 
-.pagination a,
+/*.pagination a,
 .pagination span {
     margin: 0 5px;
     padding: 5px 10px;
-   
     border-radius: 3px;
     text-decoration: none;
     color: #333;
-}
+}*/
 
-.pagination a:hover {
+/*.pagination a:hover {
     background-color: #f0f0f0;
-}
+}*/
 
-.pagination .active {
+/*.pagination .active {
     background-color:#f5c800;
     color: #fff;
    
 }
-
+*/
 svg.w-5.h-5 {
   
     width: 30px;
