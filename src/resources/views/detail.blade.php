@@ -54,27 +54,17 @@
             </div>
             <div class="products-card__season">
                 <label for="">季節</label>
-
-                <!-- <div class="season__checkbox"> -->
-                    <!-- <div class="season__checkbox-option"> -->
                 <label class="seasons__label">
-                    @foreach($allSeasons ??[] as $season)
-                        
-                            
-                            <input type="checkbox" name="season_id[]"class="season__input"value="{{$season->id}}"{{ in_array($season->id, old('season_id',$product->seasons->pluck('id')->toArray() ?? [] )) ? 'checked' : ''}}"> 
-                            <span class="season__text">{{$season->name}}</span>
-                     @endforeach       
-                        </label>
-                   
-
-                    <!-- </div> -->
-                <!-- </div> -->
-                
-            <p class="error">
+                @foreach($allSeasons ??[] as $season)
+                <input type="checkbox" name="season_id[]"class="season__input"value="{{$season->id}}"{{ in_array($season->id, old('season_id',$product->seasons->pluck('id')->toArray() ?? [] )) ? 'checked' : ''}}"> 
+                <span class="season__text">{{$season->name}}</span>
+                 @endforeach       
+                </label>
+                <p class="error">
                 @error('season_id')
                 {{$message}}
                 @enderror
-            </p>
+                </p>
             </div>
         </div>
     </div>
@@ -100,12 +90,4 @@
         </button>
     </form>
 </div>
-
-        
-        
-    
-        
-    
-    
-<!-- </div> -->
 @endsection
